@@ -23,7 +23,8 @@ public class UparContas {
 
 	public static void main(String[] args) throws IOException, AWTException, InterruptedException {
 
-		try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\accs.txt"))) {
+		try (BufferedReader br = new BufferedReader(
+				new FileReader("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\accs.txt"))) {
 			String line;
 			while ((line = br.readLine()) != null) {
 				if (line.length() > 0 && line.startsWith("/")) {
@@ -40,16 +41,16 @@ public class UparContas {
 
 	}
 
-	public static void executarPassos(String acc) throws AWTException, IOException, HeadlessException, InterruptedException {
-
-		campoLogin(acc);
-		escrever(acc);
-		login(acc);
-		jogar(acc);
-		houndsmoor(acc);
-		wait(10);
-		fecharJanela(acc);
-		pesquisa(acc);
+	public static void executarPassos(String acc)
+			throws AWTException, IOException, HeadlessException, InterruptedException {
+		 campoLogin(acc);
+		 escrever(acc);
+		 login(acc);
+		 jogar(acc);
+		 houndsmoor(acc);
+		 wait(10);
+		 fecharJanela(acc);
+		 pesquisa(acc);
 		temUmPF = temUmPf("Verificando se tem PF", acc);
 		while (temUmPF) {
 			procurarPesquisa(acc);
@@ -67,398 +68,236 @@ public class UparContas {
 
 	}
 
-	public static boolean temUmPf(String acao, String acc) throws HeadlessException, AWTException, IOException {
+	public static boolean temUmPf(String acao, String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
 		BufferedImage bi = ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\temUmPF.png"));
 		temUmPF = esperarImagem(bi, acao, acc);
+		Thread.sleep(300);
 		return temUmPF;
 	}
 
-	public static void procurarPFnaPesquisa(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		zeroCinco(acc);
-		zeroSeis(acc);
-		zeroSete(acc);
-		zeroOito(acc);
-		zeroNove(acc);
-		zeroDez(acc);
-		zeroDoze(acc);
-		umCinco(acc);
-		umSeis(acc);
-		umSete(acc);
-		umOito(acc);
-		umNove(acc);
-		umDez(acc);
-		umDoze(acc);
-		doisCinco(acc);
-		doisSeis(acc);
-		doisSete(acc);
-		doisOito(acc);
-		doisNove(acc);
-		doisDez(acc);
-		doisDoze(acc);
-		tresCinco(acc);
-		tresSeis(acc);
-		tresSete(acc);
-		tresOito(acc);
-		tresNove(acc);
-		tresDez(acc);
-		tresDoze(acc);
-		quatroCinco(acc);
-		quatroSeis(acc);
-		quatroSete(acc);
-		quatroOito(acc);
-		quatroNove(acc);
-		quatroDez(acc);
-		quatroDoze(acc);
-		cincoSeis(acc);
-		cincoSete(acc);
-		cincoOito(acc);
-		cincoNove(acc);
-		cincoDez(acc);
-		cincoDoze(acc);
-		seisSete(acc);
-		seisOito(acc);
-		seisNove(acc);
-		seisDez(acc);
-		seisDoze(acc);
-		seteOito(acc);
-		seteNove(acc);
-		seteDez(acc);
-		seteDoze(acc);
-		oitoNove(acc);
-		oitoDez(acc);
-		oitoDoze(acc);
-		noveDez(acc);
-		noveDoze(acc);
-		dezDoze(acc);
-		onzeDoze(acc);
+	public static void procurarPFnaPesquisa(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		aRoda(acc);
+		edificio(acc);
+		estilingues(acc);
+		chales(acc);
+		plantacao(acc);
+		montaria(acc);
+		casasDeColmo(acc);
+		falange(acc);
+		forja(acc);
+		Ensino(acc);
+		armasDeCerco(acc);
+		producaoDeCerveja(acc);
+		arquitetura(acc);
 	}
 
-	public static void procurarPesquisa(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		telaPraEsquerda(acc);
+	public static void procurarPesquisa(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		// telaPraEsquerda(acc);
 		fecharJanela(acc);
 		procurarPFnaPesquisa(acc);
-		fecharJanela(acc);
-		telaPraDireita(acc);
-		procurarPFnaPesquisa(acc);
+		// fecharJanela(acc);
+		// telaPraDireita(acc);
+		// procurarPFnaPesquisa(acc);
 	}
 
-	public static void useUmPonto(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\useUmPonto.png")), "useUmPonto", acc);
+	public static void useUmPonto(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\useUmPonto.png")),
+				"useUmPonto", acc);
 	}
 
-	public static void desbloquearAgora(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\desbloquearAgora.png")), "desbloquearAgora", acc);
+	public static void armasDeCerco(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\armasDeCerco.png")),
+				"armasDeCerco", acc);
+	}
+
+	public static void producaoDeCerveja(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(
+				ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\producaoDeCerveja.png")),
+				"producaoDeCerveja", acc);
+	}
+
+	public static void plantacao(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\plantacao.png")),
+				"plantacao", acc);
+	}
+
+	public static void montaria(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\montaria.png")),
+				"montaria", acc);
+	}
+
+	public static void forja(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\forja.png")), "forja",
+				acc);
+	}
+
+	public static void falange(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\falange.png")),
+				"falange", acc);
+	}
+
+	public static void estilingues(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\estilingues.png")),
+				"estilingues", acc);
+	}
+
+	public static void Ensino(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\Ensino.png")),
+				"Ensino", acc);
+	}
+
+	public static void edificio(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\edificio.png")),
+				"edificio", acc);
+	}
+
+	public static void chales(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\chales.png")),
+				"chales", acc);
+	}
+
+	public static void casasDeColmo(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\casasDeColmo.png")),
+				"casasDeColmo", acc);
+	}
+
+	public static void arquitetura(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\arquitetura.png")),
+				"arquitetura", acc);
+	}
+
+	public static void aRoda(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\aRoda.png")), "aRoda",
+				acc);
+	}
+
+	public static void desbloquearAgora(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\desbloquearAgora.png")),
+				"desbloquearAgora", acc);
 	}
 
 	//
-	public static void telaPraDireita(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\telaPraDireita.png")), "telaPraDireita", acc);
+	public static void telaPraDireita(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\telaPraDireita.png")),
+				"telaPraDireita", acc);
 	}
 
-	public static void telaPraEsquerda(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\telaPraEsquerda.png")), "telaPraEsquerda", acc);
+	public static void telaPraEsquerda(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\telaPraEsquerda.png")),
+				"telaPraEsquerda", acc);
 	}
 
-	public static void onzeDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\onzeDoze.png")), "onzeDoze", acc);
+	public static void recarregar(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\recarregar.png")), "recarregar",
+				acc);
 	}
 
-	public static void dezDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\dezDoze.png")), "dezDoze", acc);
+	public static void desmarcarOpcao(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\desmarcarOpcao.png")),
+				"desmarcarOpcao", acc);
 	}
 
-	public static void noveDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\noveDoze.png")), "noveDoze", acc);
+	public static void configuracoes(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\configuracoes.png")),
+				"configuracoes", acc);
 	}
 
-	public static void oitoDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\oitoDoze.png")), "oitoDoze", acc);
+	public static void idadeDaPedra(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\idadeDaPedra.png")),
+				"idadeDaPedra", acc);
 	}
 
-	public static void seteDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seteDoze.png")), "seteDoze", acc);
+	public static void voltarACidade2(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\voltarACidade2.png")),
+				"voltarACidade2", acc);
 	}
 
-	public static void seisDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seisDoze.png")), "seisDoze", acc);
+	public static void voltarParaVisaoGeral(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\voltarParaVisaoGeral.png")),
+				"voltarParaVisaoGeral", acc);
 	}
 
-	public static void cincoDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\cincoDoze.png")), "cincoDoze", acc);
+	public static void useXPontos(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\useXPontos.png")), "useXPontos",
+				acc);
 	}
 
-	public static void quatroDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroDoze.png")), "quatroDoze", acc);
+	public static void pesquisaRoda(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaRoda.png")),
+				"pesquisaRoda", acc);
 	}
 
-	public static void tresDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresDoze.png")), "tresDoze", acc);
-	}
-
-	public static void doisDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisDoze.png")), "doisDoze", acc);
-	}
-
-	public static void umDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umDoze.png")), "umDoze", acc);
-	}
-
-	public static void zeroDoze(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroDoze.png")), "zeroDoze", acc);
-	}
-
-	public static void noveDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\noveDez.png")), "noveDez", acc);
-	}
-
-	public static void oitoDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\oitoDez.png")), "oitoDez", acc);
-	}
-
-	public static void seteDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seteDez.png")), "seteDez", acc);
-	}
-
-	public static void seisDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seisDez.png")), "seisDez", acc);
-	}
-
-	public static void cincoDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\cincoDez.png")), "cincoDez", acc);
-	}
-
-	public static void quatroDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroDez.png")), "quatroDez", acc);
-	}
-
-	public static void tresDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresDez.png")), "tresDez", acc);
-	}
-
-	public static void doisDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisDez.png")), "doisDez", acc);
-	}
-
-	public static void umDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umDez.png")), "umDez", acc);
-	}
-
-	public static void zeroDez(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroDez.png")), "zeroDez", acc);
-	}
-
-	public static void oitoNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\oitoNove.png")), "oitoNove", acc);
-	}
-
-	public static void seteNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seteNove.png")), "seteNove", acc);
-	}
-
-	public static void seisNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seisNove.png")), "seisNove", acc);
-	}
-
-	public static void cincoNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\cincoNove.png")), "cincoNove", acc);
-	}
-
-	public static void quatroNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroNove.png")), "quatroNove", acc);
-	}
-
-	public static void tresNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresNove.png")), "tresNove", acc);
-	}
-
-	public static void doisNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisNove.png")), "doisNove", acc); // achouPesquisa = true;
-	}
-
-	public static void umNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umNove.png")), "umNove", acc);
-	}
-
-	public static void zeroNove(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroNove.png")), "zeroNove", acc);
-	}
-
-	public static void seteOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seteOito.png")), "seteOito", acc);
-	}
-
-	public static void seisOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seisOito.png")), "seisOito", acc);
-	}
-
-	public static void cincoOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\cincoOito.png")), "cincoOito", acc);
-	}
-
-	public static void quatroOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroOito.png")), "quatroOito", acc);
-	}
-
-	public static void tresOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresOito.png")), "tresOito", acc);
-	}
-
-	public static void doisOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisOito.png")), "doisOito", acc);
-	}
-
-	public static void umOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umOito.png")), "umOito", acc);
-	}
-
-	public static void zeroOito(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroOito.png")), "zeroOito", acc);
-	}
-
-	public static void cincoSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\cincoSete.png")), "cincoSete", acc);
-	}
-
-	public static void seisSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\seisSete.png")), "seisSete", acc);
-	}
-
-	public static void quatroSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroSete.png")), "quatroSete", acc);
-	}
-
-	public static void tresSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresSete.png")), "tresSete", acc);
-	}
-
-	public static void doisSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisSete.png")), "doisSete", acc);
-	}
-
-	public static void umSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umSete.png")), "umSete", acc);
-	}
-
-	public static void zeroSete(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroSete.png")), "zeroSete", acc);
-	}
-
-	public static void cincoSeis(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\cincoSeis.png")), "cincoSeis", acc);
-	}
-
-	public static void quatroSeis(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroSeis.png")), "quatroSeis", acc);
-	}
-
-	public static void tresSeis(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresSeis.png")), "tresSeis", acc);
-	}
-
-	public static void doisSeis(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisSeis.png")), "doisSeis", acc);
-	}
-
-	public static void umSeis(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umSeis.png")), "umSeis", acc);
-	}
-
-	public static void zeroSeis(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroSeis.png")), "zeroSeis", acc);
-	}
-
-	public static void quatroCinco(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\quatroCinco.png")), "quatroCinco", acc);
-	}
-
-	public static void tresCinco(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\tresCinco.png")), "tresCinco", acc);
-	}
-
-	public static void doisCinco(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\doisCinco.png")), "doisCinco", acc);
-	}
-
-	public static void umCinco(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\umCinco.png")), "umCinco", acc);
-	}
-
-	public static void zeroCinco(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\zeroCinco.png")), "zeroCinco", acc);
-	}
-
-	public static void recarregar(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\recarregar.png")), "recarregar", acc);
-	}
-
-	public static void desmarcarOpcao(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\desmarcarOpcao.png")), "desmarcarOpcao", acc);
-	}
-
-	public static void configuracoes(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\configuracoes.png")), "configuracoes", acc);
-	}
-
-	public static void idadeDaPedra(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\idadeDaPedra.png")), "idadeDaPedra", acc);
-	}
-
-	public static void voltarACidade2(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\voltarACidade2.png")), "voltarACidade2", acc);
-	}
-
-	public static void voltarParaVisaoGeral(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\voltarParaVisaoGeral.png")), "voltarParaVisaoGeral", acc);
-	}
-
-	public static void useXPontos(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\useXPontos.png")), "useXPontos", acc);
-	}
-
-	public static void pesquisaRoda(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaRoda.png")), "pesquisaRoda", acc);
-	}
-
-	public static void pesquisaOlaria(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaOlaria.png")), "pesquisaOlaria", acc);
+	public static void pesquisaOlaria(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaOlaria.png")),
+				"pesquisaOlaria", acc);
 	}
 
 	public static void auxiliar(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\auxiliar.png")), "auxiliar", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\auxiliar.png")), "auxiliar",
+				acc);
 		Thread.sleep(1000);
 	}
 
-	public static void sentarNaTaberna(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\sentarNaTaberna.png")), "sentarNaTaberna", acc);
+	public static void sentarNaTaberna(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\sentarNaTaberna.png")),
+				"sentarNaTaberna", acc);
 		Thread.sleep(1000);
 	}
 
 	public static void atacarInimigo2(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\atacarInimigo2.png")), "atacarInimigo2", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\atacarInimigo2.png")),
+				"atacarInimigo2", acc);
 	}
 
 	public static void atacarInimigo1(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\atacarInimigo1.png")), "atacarInimigo1", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\atacarInimigo1.png")),
+				"atacarInimigo1", acc);
 	}
 
 	public static void moverLanceiro2(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\moverLanceiro2.png")), "moverLanceiro2", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\moverLanceiro2.png")),
+				"moverLanceiro2", acc);
 	}
 
 	public static void moverLanceiro1(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\moverLanceiro1.png")), "moverLanceiro1", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\moverLanceiro1.png")),
+				"moverLanceiro1", acc);
 	}
 
 	public static void botaoAtacarVerde(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\botaoAtacarVerde.png")), "botaoAtacarVerde", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\botaoAtacarVerde.png")),
+				"botaoAtacarVerde", acc);
 	}
 
 	public static void lanceiro(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\lanceiro.png")), "lanceiro", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\lanceiro.png")), "lanceiro",
+				acc);
 	}
 
 	public static void botaoAtacar(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\botaoAtacar.png")), "botaoAtacar", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\botaoAtacar.png")),
+				"botaoAtacar", acc);
 	}
 
 	public static void setor1(String acc) throws HeadlessException, AWTException, IOException {
@@ -466,11 +305,13 @@ public class UparContas {
 	}
 
 	public static void provincia(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\provincia.png")), "provincia", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\provincia.png")), "provincia",
+				acc);
 	}
 
 	public static void explorar(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\explorar.png")), "explorar", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\explorar.png")), "explorar",
+				acc);
 	}
 
 	public static void mapa(String acc) throws HeadlessException, AWTException, IOException {
@@ -478,81 +319,101 @@ public class UparContas {
 	}
 
 	public static void pesquisaLancas(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaLancas.png")), "pesquisaLancas", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaLancas.png")),
+				"pesquisaLancas", acc);
 	}
 
 	public static void colocarCasaGrande(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarCasaGrande.png")), "colocarCasaGrande", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarCasaGrande.png")),
+				"colocarCasaGrande", acc);
 	}
 
 	public static void casaGrandeMenu(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\casaGrandeMenu.png")), "casaGrandeMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\casaGrandeMenu.png")),
+				"casaGrandeMenu", acc);
 	}
 
 	public static void coletarVerde(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\coletarVerde.png")), "coletarVerde", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\coletarVerde.png")),
+				"coletarVerde", acc);
 	}
 
 	public static void historia2(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\historia2.png")), "historia2", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\historia2.png")), "historia2",
+				acc);
 	}
 
 	public static void colocarPalafita(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarPalafita.png")), "colocarPalafita", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarPalafita.png")),
+				"colocarPalafita", acc);
 	}
 
 	public static void palafitaMenu(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\palafitaMenu.png")), "palafitaMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\palafitaMenu.png")),
+				"palafitaMenu", acc);
 	}
 
 	public static void casaMenu(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
 		Thread.sleep(1000);
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\casaMenu.png")), "casaMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\casaMenu.png")), "casaMenu",
+				acc);
 	}
 
 	public static void historia(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\historia.png")), "historia", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\historia.png")), "historia",
+				acc);
 	}
 
 	public static void colocarMemorial(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarMemorial.png")), "colocarMemorial", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarMemorial.png")),
+				"colocarMemorial", acc);
 	}
 
 	public static void memorialMenu(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\memorialMenu.png")), "memorialMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\memorialMenu.png")),
+				"memorialMenu", acc);
 	}
 
-	public static void decoracaoMenu(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+	public static void decoracaoMenu(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
 		Thread.sleep(1000);
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\decoracaoMenu.png")), "decoracaoMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\decoracaoMenu.png")),
+				"decoracaoMenu", acc);
 	}
 
 	public static void voltarACidade(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\voltarACidade.png")), "voltarACidade", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\voltarACidade.png")),
+				"voltarACidade", acc);
 	}
 
 	public static void fecharVerde(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\fecharVerde.png")), "fecharVerde", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\fecharVerde.png")),
+				"fecharVerde", acc);
 	}
 
 	public static void abrirOBau(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\abrirOBau.png")), "abrirOBau", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\abrirOBau.png")), "abrirOBau",
+				acc);
 	}
 
 	public static void okVerde(String acc) throws HeadlessException, AWTException, IOException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\okVerde.png")), "okVerde", acc);
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\okVerde.png")), "okVerde",
+				acc);
 	}
 
 	public static void use3Pontos(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\use3Pontos.png")), "use3Pontos", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\use3Pontos.png")), "use3Pontos",
+				acc);
 	}
 
 	public static void pesquisaPalafitas(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaPalafitas.png")), "pesquisaPalafitas", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisaPalafitas.png")),
+				"pesquisaPalafitas", acc);
 	}
 
 	public static void fecharJanela(String acc) throws HeadlessException, AWTException, IOException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\fecharJanela.png")), "Fechar janela", acc);
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\fecharJanela.png")),
+				"Fechar janela", acc);
 	}
 
 	public static void abrir(String acc) throws HeadlessException, AWTException, IOException {
@@ -572,11 +433,13 @@ public class UparContas {
 	}
 
 	public static void tirarMusica(String acc) throws HeadlessException, AWTException, IOException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\tirarMusica.png")), "tirarMusica", acc);
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\tirarMusica.png")),
+				"tirarMusica", acc);
 	}
 
 	public static void tirarSom(String acc) throws HeadlessException, AWTException, IOException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\tirarSom.png")), "tirarSom", acc);
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\tirarSom.png")),
+				"tirarSom", acc);
 	}
 
 	public static void ok(String acc) throws HeadlessException, AWTException, IOException {
@@ -584,62 +447,84 @@ public class UparContas {
 	}
 
 	public static void construir(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\construir.png")), "construir", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\construir.png")), "construir",
+				acc);
 	}
 
-	public static void cabanaMenu(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+	public static void cabanaMenu(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
 		Thread.sleep(1000);
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cabanaMenu.png")), "cabanaMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cabanaMenu.png")), "cabanaMenu",
+				acc);
 	}
 
 	public static void colocarCabana(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarCabana.png")), "colocarCabana", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarCabana.png")),
+				"colocarCabana", acc);
 	}
 
 	public static void coletarPrimeiraCabana(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\coletarPrimeiraCabana.png")), "coletarPrimeiraCabana", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\coletarPrimeiraCabana.png")),
+				"coletarPrimeiraCabana", acc);
 	}
 
-	public static void mantimentosMenu(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+	public static void mantimentosMenu(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
 		Thread.sleep(1000);
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\mantimentosMenu.png")), "mantimentosMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\mantimentosMenu.png")),
+				"mantimentosMenu", acc);
 	}
 
-	public static void cacadorMenu(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+	public static void cacadorMenu(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
 		Thread.sleep(1000);
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cacadorMenu.png")), "cacadorMenu", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cacadorMenu.png")),
+				"cacadorMenu", acc);
 	}
 
-	public static void colocarCacador(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarCacador.png")), "colocarCacador", acc);
+	public static void colocarCacador(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\colocarCacador.png")),
+				"colocarCacador", acc);
 	}
 
-	public static void botaoMover(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\botaoMover.png")), "botaoMover", acc);
+	public static void botaoMover(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\botaoMover.png")), "botaoMover",
+				acc);
 	}
 
-	public static void pegarCacadorEmConstrucao(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pegarCacadorEmConstrucao.png")), "pegarCacadorEmConstrucao", acc);
+	public static void pegarCacadorEmConstrucao(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pegarCacadorEmConstrucao.png")),
+				"pegarCacadorEmConstrucao", acc);
 	}
 
-	public static void moverCacador(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\moverCacador.png")), "moverCacador", acc);
+	public static void moverCacador(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\moverCacador.png")),
+				"moverCacador", acc);
 	}
 
-	public static void cacadorEsperando(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cacadorEsperando.png")), "cacadorEsperando", acc);
+	public static void cacadorEsperando(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cacadorEsperando.png")),
+				"cacadorEsperando", acc);
 	}
 
 	public static void cincoMin(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cincoMin.png")), "cincoMin", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\cincoMin.png")), "cincoMin",
+				acc);
 	}
 
 	public static void pesquisa(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisa.png")), "pesquisa", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\pesquisa.png")), "pesquisa",
+				acc);
 	}
 
 	public static void campoLogin(String acc) throws HeadlessException, AWTException, IOException {
-		clicarLogin(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\campoLogin.png")), "Campo Login", acc);
+		clicarLogin(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\campoLogin.png")), "Campo Login",
+				acc);
 	}
 
 	public static void login(String acc) throws HeadlessException, AWTException, IOException {
@@ -663,7 +548,8 @@ public class UparContas {
 	}
 
 	public static void grandesEdificios(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\grandesEdificios.png")), "Grandes Edificios", acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\grandesEdificios.png")),
+				"Grandes Edificios", acc);
 	}
 
 	public static void todaABarra(String acc) throws HeadlessException, AWTException, IOException {
@@ -671,7 +557,8 @@ public class UparContas {
 	}
 
 	public static void todaABarra10(String acc) throws HeadlessException, AWTException, IOException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\todaABarra10.png")), "Toda a barra10", acc);
+		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\todaABarra10.png")),
+				"Toda a barra10", acc);
 	}
 
 	public static void escrever(String string) throws AWTException {
@@ -749,7 +636,8 @@ public class UparContas {
 		clicker.delay(200);
 	}
 
-	public static void aguardar(ArrayList<BufferedImage> bi, String acao, String acc) throws HeadlessException, AWTException {
+	public static void aguardar(ArrayList<BufferedImage> bi, String acao, String acc)
+			throws HeadlessException, AWTException {
 
 		boolean achouUm = false;
 		while (!achouUm) {
@@ -759,7 +647,8 @@ public class UparContas {
 		}
 	}
 
-	public static void clicar(BufferedImage bi, String acao, String acc) throws AWTException, HeadlessException, IOException {
+	public static void clicar(BufferedImage bi, String acao, String acc)
+			throws AWTException, HeadlessException, IOException {
 		if (acao == "lanceiro") {
 			for (int i = 0; i < 1; i++) {
 				compararImagens(bi, 0.5, 0.5, 0, 30, acao, acc);
@@ -768,19 +657,23 @@ public class UparContas {
 		compararImagens(bi, 0.5, 0.5, 0, 30, acao, acc);
 	}
 
-	public static void clicarRapido(BufferedImage bi, String acao, String acc) throws AWTException, HeadlessException, IOException {
+	public static void clicarRapido(BufferedImage bi, String acao, String acc)
+			throws AWTException, HeadlessException, IOException {
 		compararImagens(bi, 0.5, 0.5, 0, 10, acao, acc);
 	}
 
-	public static void clicarInstant(BufferedImage bi, String acao, String acc) throws AWTException, HeadlessException, IOException {
+	public static void clicarInstant(BufferedImage bi, String acao, String acc)
+			throws AWTException, HeadlessException, IOException {
 		compararImagens(bi, 0.5, 0.5, 0, 1, acao, acc);
 	}
 
-	public static void clicarLogin(BufferedImage bi, String acao, String acc) throws AWTException, HeadlessException, IOException {
+	public static void clicarLogin(BufferedImage bi, String acao, String acc)
+			throws AWTException, HeadlessException, IOException {
 		compararImagens(bi, 0.6, 0.3, 0, 30, acao, acc);
 	}
 
-	public static void clicarColeta(BufferedImage bi, String acao, String acc) throws AWTException, HeadlessException, IOException {
+	public static void clicarColeta(BufferedImage bi, String acao, String acc)
+			throws AWTException, HeadlessException, IOException {
 		zoomIn();
 		for (int i = 0; i < casas; i++) {
 			compararImagens(bi, 0.6, 0.1, 0, 2, acao + (i + 1), acc);
@@ -789,12 +682,14 @@ public class UparContas {
 		zoomOut();
 	}
 
-	public static boolean esperarImagem(BufferedImage bi, String acao, String acc) throws HeadlessException, AWTException {
+	public static boolean esperarImagem(BufferedImage bi, String acao, String acc)
+			throws HeadlessException, AWTException {
 		boolean achou = false;
 		boolean fail = true;
 		int count = 0;
 		while (achou == false && count < 10) {
-			BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+			BufferedImage image = new Robot()
+					.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 			for (int x = 0; x < image.getWidth(); x++) {
 				for (int y = 0; y < image.getHeight(); y++) {
 					boolean invalid = false;
@@ -831,12 +726,14 @@ public class UparContas {
 		return achou;
 	}
 
-	public static void compararPixels(BufferedImage bi, double widthMult, double heigthMult, int count, int maxCount, String acao, String acc) throws HeadlessException, AWTException {
+	public static void compararPixels(BufferedImage bi, double widthMult, double heigthMult, int count, int maxCount,
+			String acao, String acc) throws HeadlessException, AWTException {
 		boolean achou = false;
 		boolean fail = true;
 		boolean achouUm = false;
 		while (achou == false && count < maxCount) {
-			BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+			BufferedImage image = new Robot()
+					.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 			for (int x = 0; x < image.getWidth(); x++) {
 				for (int y = 0; y < image.getHeight(); y++) {
 					boolean invalid = false;
@@ -861,7 +758,9 @@ public class UparContas {
 					if (!invalid && !achouUm) {
 						achou = true;
 						achouUm = true;
-						clickEvent(k - (bi.getWidth() * widthMult), l - (bi.getHeight() * heigthMult)); // Clica no centro do objeto
+						clickEvent(k - (bi.getWidth() * widthMult), l - (bi.getHeight() * heigthMult)); // Clica no
+																										// centro do
+																										// objeto
 						System.out.println(acao + ": OK! " + acc);
 						fail = false;
 					}
@@ -874,11 +773,13 @@ public class UparContas {
 		}
 	}
 
-	public static void compararImagens(BufferedImage bi, double widthMult, double heigthMult, int count, int maxCount, String acao, String acc) throws HeadlessException, AWTException, IOException {
+	public static void compararImagens(BufferedImage bi, double widthMult, double heigthMult, int count, int maxCount,
+			String acao, String acc) throws HeadlessException, AWTException, IOException {
 		if (acao == "Auxiliar") {
 			for (int i = 0; i < 5; i++) {
 				compararPixels(bi, widthMult, heigthMult, count, maxCount, acao, acc);
-				clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\fechar.png")), "Fechar", acc);
+				clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\fechar.png")), "Fechar",
+						acc);
 			}
 		} else {
 			compararPixels(bi, widthMult, heigthMult, count, maxCount, acao, acc);
