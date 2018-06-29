@@ -43,14 +43,15 @@ public class UparContas {
 
 	public static void executarPassos(String acc)
 			throws AWTException, IOException, HeadlessException, InterruptedException {
-		 campoLogin(acc);
-		 escrever(acc);
-		 login(acc);
-		 jogar(acc);
-		 houndsmoor(acc);
-		 wait(10);
-		 fecharJanela(acc);
-		 pesquisa(acc);
+		campoLogin(acc);
+		Thread.sleep(1000);
+		escrever(acc);
+		login(acc);
+		jogar(acc);
+		houndsmoor(acc);
+		wait(10);
+		fecharJanela(acc);
+		pesquisa(acc);
 		temUmPF = temUmPf("Verificando se tem PF", acc);
 		while (temUmPF) {
 			procurarPesquisa(acc);
@@ -68,7 +69,8 @@ public class UparContas {
 
 	}
 
-	public static boolean temUmPf(String acao, String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+	public static boolean temUmPf(String acao, String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
 		BufferedImage bi = ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\temUmPF.png"));
 		temUmPF = esperarImagem(bi, acao, acc);
 		Thread.sleep(300);
@@ -86,7 +88,7 @@ public class UparContas {
 		casasDeColmo(acc);
 		falange(acc);
 		forja(acc);
-		Ensino(acc);
+		ensino(acc);
 		armasDeCerco(acc);
 		producaoDeCerveja(acc);
 		arquitetura(acc);
@@ -100,6 +102,12 @@ public class UparContas {
 		// fecharJanela(acc);
 		// telaPraDireita(acc);
 		// procurarPFnaPesquisa(acc);
+	}
+
+	public static void comprarPedras(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\comprarPedras.png")),
+				"comprarPedras", acc);
 	}
 
 	public static void useUmPonto(String acc)
@@ -147,9 +155,9 @@ public class UparContas {
 				"estilingues", acc);
 	}
 
-	public static void Ensino(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\Ensino.png")),
-				"Ensino", acc);
+	public static void ensino(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\ensino.png")),
+				"ensino", acc);
 	}
 
 	public static void edificio(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
@@ -172,6 +180,31 @@ public class UparContas {
 			throws HeadlessException, AWTException, IOException, InterruptedException {
 		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\arquitetura.png")),
 				"arquitetura", acc);
+		Thread.sleep(100);
+		comprarPedras(acc);
+		Thread.sleep(100);
+		okVerde(acc);
+		idadeDoFerro(acc);
+		Thread.sleep(100);
+		idadeDoFerro(acc);
+		abrirOBau(acc);
+		Thread.sleep(100);
+		idadeDoFerro(acc);
+		proximo(acc);
+		Thread.sleep(100);
+		idadeDoFerro(acc);
+		fecharVerde(acc);
+	}
+
+	public static void idadeDoFerro(String acc)
+			throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\idadeDoFerro.png")),
+				"idadeDoFerro", acc);
+	}
+
+	public static void proximo(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\proximo.png")),
+				"proximo", acc);
 	}
 
 	public static void aRoda(String acc) throws HeadlessException, AWTException, IOException, InterruptedException {
@@ -236,8 +269,8 @@ public class UparContas {
 
 	public static void useXPontos(String acc)
 			throws HeadlessException, AWTException, IOException, InterruptedException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\useXPontos.png")), "useXPontos",
-				acc);
+		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\UparContas\\useXPontos.png")),
+				"useXPontos", acc);
 	}
 
 	public static void pesquisaRoda(String acc)
@@ -387,18 +420,18 @@ public class UparContas {
 	}
 
 	public static void fecharVerde(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\fecharVerde.png")),
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\uparContas\\fecharVerde.png")),
 				"fecharVerde", acc);
 	}
 
 	public static void abrirOBau(String acc) throws HeadlessException, AWTException, IOException {
-		clicar(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\abrirOBau.png")), "abrirOBau",
-				acc);
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\uparContas\\abrirOBau.png")),
+				"abrirOBau", acc);
 	}
 
 	public static void okVerde(String acc) throws HeadlessException, AWTException, IOException {
-		clicarRapido(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\CriarAcc\\okVerde.png")), "okVerde",
-				acc);
+		clicarInstant(ImageIO.read(new File("C:\\Users\\Vitor\\Downloads\\PrintsFOE\\uparContas\\okVerde.png")),
+				"okVerde", acc);
 	}
 
 	public static void use3Pontos(String acc) throws HeadlessException, AWTException, IOException {
